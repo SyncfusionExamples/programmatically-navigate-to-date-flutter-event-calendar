@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 
-void main() => runApp(ProgrammaticDateNavigation());
+void main() => runApp(const ProgrammaticDateNavigation());
 
 class ProgrammaticDateNavigation extends StatefulWidget {
+  const ProgrammaticDateNavigation({super.key});
+
   @override
   DateNavigationState createState() => DateNavigationState();
 }
 
 class DateNavigationState extends State<ProgrammaticDateNavigation> {
-  CalendarController _controller;
+  late CalendarController _controller;
 
   @override
   void initState() {
@@ -26,8 +28,8 @@ class DateNavigationState extends State<ProgrammaticDateNavigation> {
           children: [
             Container(
               margin: const EdgeInsets.fromLTRB(50, 30, 50, 0),
-              child: RaisedButton(
-                child: Text('Change display date'),
+              child: TextButton(
+                child: const Text('Change display date'),
                 onPressed: () {
                   _controller.displayDate = DateTime(2020, 5, 1, 9, 0, 0);
                 },
